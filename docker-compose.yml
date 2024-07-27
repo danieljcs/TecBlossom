@@ -22,7 +22,7 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ./BACK
     container_name: backend
     environment:
       DB_USERNAME: rickblossom
@@ -39,7 +39,7 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./FRONT
     container_name: frontend
     ports:
       - "3000:3000"
@@ -48,7 +48,7 @@ services:
 
   python:
     build:
-      context: ./python
+      context: ./UTILS
     container_name: python
     depends_on:
       - mysql

@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.addColumn('Characters', 'deletedAt', {
       type: Sequelize.DATE,
       allowNull: true,
-      after: 'is_favorite' // Opcional: coloca el campo en la posición deseada
+      after: 'is_favorite'
     });
   },
 

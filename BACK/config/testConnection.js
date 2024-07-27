@@ -6,7 +6,7 @@ const sequelize = new Sequelize('rick_and_blossom', 'admin', 'Drako2023', {
   dialectOptions: {
     connectTimeout: 60000,
   },
-  logging: console.log, // Activa el logging para ver los mensajes en la consola
+  logging: console.log,
 });
 
 async function testConnection() {

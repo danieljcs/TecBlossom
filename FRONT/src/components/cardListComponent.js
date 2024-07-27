@@ -31,7 +31,6 @@ const CharacterList = ({ characters, onDelete ,onComment }) => {
   const handleDelete = (deletedId) => {
     setSortedCharacters((prevCharacters) => {
       const updatedList = prevCharacters.filter(character => character.id !== deletedId);
-      console.log(updatedList);
       return updatedList;
     });
     

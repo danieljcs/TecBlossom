@@ -3,21 +3,21 @@
     "username": "rickblossom",
     "password": "rickblossom123",
     "database": "rick_and_blossom",
-    "host": "mysql",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "rickblossom",
     "password": "rickblossom123",
     "database": "rick_and_blossom",
-    "host": "mysql",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "production": {
     "username": "rickblossom",
     "password": "rickblossom123",
     "database": "rick_and_blossom",
-    "host": "mysql",
+    "host": "localhost",
     "dialect": "mysql"
   }
 }

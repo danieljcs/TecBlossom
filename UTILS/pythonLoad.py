@@ -6,7 +6,7 @@ from datetime import datetime
 config = {
     'user': 'rickblossom',
     'password': 'rickblossom123',
-    'host': 'mysql',
+    'host': 'localhost',
     'database': 'rick_and_blossom',
     'raise_on_warnings': True
 }
