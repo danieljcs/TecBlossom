@@ -1,0 +1,28 @@
+# Dockerfile para el Frontend
+# Utiliza una imagen base de Node.js
+FROM node:20 AS build
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Copia los archivos del proyecto
+COPY package*.json ./
+RUN npm install
+
+# Copia el resto de los archivos
+COPY . .
+
+# Construye la aplicación
+RUN npm run build
+
+# Utiliza una imagen de Nginx para servir los archivos estáticos
+FROM nginx:alpine
+
+# Copia los archivos construidos en la imagen de Node.js
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Expone el puerto en el que Nginx está sirviendo la aplicación
+EXPOSE 80
+
+# Comando para iniciar Nginx
+CMD ["nginx", "-g", "daemon off;"]

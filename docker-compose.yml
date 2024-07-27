@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: rick_and_blossom
+      MYSQL_USER: rickblossom
+      MYSQL_PASSWORD: rickblossom123
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - blossom-network
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    networks:
+      - blossom-network
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    environment:
+      DB_USERNAME: rickblossom
+      DB_PASSWORD: rickblossom123
+      DB_DATABASE: rick_and_blossom
+      DB_HOST: mysql
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - blossom-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - blossom-network
+
+  python:
+    build:
+      context: ./python
+    container_name: python
+    depends_on:
+      - mysql
+    networks:
+      - blossom-network
+
+volumes:
+  mysql_data:
+
+networks:
+  blossom-network:

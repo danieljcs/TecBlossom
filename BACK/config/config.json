@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "rickblossom",
+    "password": "rickblossom123",
+    "database": "rick_and_blossom",
+    "host": "mysql",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "rickblossom",
+    "password": "rickblossom123",
+    "database": "rick_and_blossom",
+    "host": "mysql",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "rickblossom",
+    "password": "rickblossom123",
+    "database": "rick_and_blossom",
+    "host": "mysql",
+    "dialect": "mysql"
+  }
+}
